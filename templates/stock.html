@@ -14,13 +14,11 @@
     href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Dancing+Script&family=Indie+Flower&display=swap"
     rel="stylesheet">
 
-  <title>Colllect</title>
+  <title>Blood Stock</title>
 </head>
 <style>
   body {
-    /* background-image: url("img/Screenshot\ \(455\).png");
-    background-repeat: no-repeat; */
-    background-color: #9b9a92;
+    background-color: #1f1c16;
   }
 
   .my-nav {
@@ -69,21 +67,6 @@
     /* text-shadow:0 0 32px blue; */
   }
 
-  .formheading{
-    text-align: center;
-    padding-top: 2px;
-    padding-bottom: 50px;
-    color: green;
-    text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
-  }
-  .myform {
-    margin: 10% 0% 10% 0%;
-    /* color: green; */
-    padding: 0px 40px 0px 40px;
-    color: black;
-    background-color: #7a7973, #9b9a92;
-  }
-
   .my-footer {
     margin-top: -2px;
     background-color: rgb(102, 94, 94);
@@ -91,6 +74,10 @@
     padding: 20px 40px;
     text-align: center;
     box-shadow: 0px -4px 15px rgb(99, 98, 98);
+  }
+  .card-text{
+      text-align: center;
+      color: midnightblue;
   }
 </style>
 
@@ -109,19 +96,19 @@
         <div class="collapse navbar-collapse my-nav-items" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="{{home}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blood Stock</a>
+              <a class="nav-link active" href="{{stock}}">Blood Stock</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle  active" href="#" id="navbarScrollingDropdown" role="button"
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Doctors
               </a>
               <ul class="dropdown-menu" style="background-color: rgb(110, 9, 9);" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item " href="#">Collect it</a></li>
-                <li><a class="dropdown-item" href="#">Give it</a></li>
+                <li><a class="dropdown-item" href="{{collect}}">Collect it</a></li>
+                <li><a class="dropdown-item" href="{{give}}">Give it</a></li>
               </ul>
             </li>
           </ul>
@@ -131,26 +118,75 @@
   </header>
 
 
-  <div class="row featurette">
-    <div class="col-md-6 order-md-2">
-      <div class=" container myform">
-        <div class="formheading" > <h1>+ Add Data +</h1></div>
-        <form class="row md-7">
-          <div class="col-md-12">
-            <label for="key" class="form-label">Registration Number</label>
-            <input type="text" class="form-control" id="key">
+  <div class="album py-5 bg-success">
+    <div class="container">
+
+      <div class="row row-cols-sm-4 g-3">
+        <div class="col">
+          <div class="card shadow-sm my-card-img">
+                <img src="/static/a+.png" width="100%" height="400">
+            <div class="card-body my-card-body">
+              <p class="card-text" id="a+">{{ap}} litre</p>
+            </div>
           </div>
-          <div class="col-md-12">
-            <label for="Amount" class="form-label">Amount (ml)</label>
-            <input type="number" class="form-control" id="amount">
+        </div>
+        <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/b+.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="b+">{{bp}} litre</p>
+              </div>
+            </div>
           </div>
-          <div class="col-12" style="text-align:center;">
-            <button type="submit" class="btn btn-primary" style="background-color: rgb(192, 18, 18);margin: 20px 10px;">Submit</button>
+          <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/ab+.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="ab+">{{abp}} litre</p>
+              </div>
+            </div>
           </div>
-        </form>
-      </div>
-    </div>
-    <div class="col-md-6 order-md-1"><img src="static/Screenshot (455).png" width="100%" height="700">
+          <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/o+.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="o+">{{op}} litre</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/a-.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="a-">{{am}} litre</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/b-.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="b-">{{bm}} litre</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/ab-.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="ab-">{{abm}} litre</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm my-card-img">
+                  <img src="/static/o-.png" width="100%" height="400">
+              <div class="card-body my-card-body">
+                <p class="card-text" id="o-">{{om}} litre</p>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 
