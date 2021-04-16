@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from bloodbank.models import Contact,Bloodbank
+from django.contrib.auth.models import User
 
 # from django,contrib import messages
 
@@ -24,9 +25,6 @@ def index(request):
         phoneNumber=phoneNumber)
         if contact.is_valid():
             contact.save()
-            # messages.sucess(request,"Successfullly added")
-        # else:
-            # message.error(request,"Please fill all the data")
         return redirect('/')
     return render(request,'index.html',context)
 
@@ -61,9 +59,6 @@ def collect(request):
             curr.save()
         except:
             print("DO NOT EXIST")
-            # messages.success(request,"Successfullly data added")
-        # else:
-            # message.error(request,"Data Not Found")
         return redirect('collect')
     return render(request,'collect.html',context)
 
@@ -76,13 +71,9 @@ def give(request):
             curr=Bloodbank.objects.get(category=category)
             curr.amount-=int(amount)
             if curr.amount>=0:
-                # message.error(request,"Blood isn't available")
-            # else:
                 curr.save()
-                # messages.sucess(request,"Successfullly data updated")
         except:
             print("DO NOT EXIST")
-            # message.error(request,"Data Not Found")
         return redirect('give')
     return render(request,'give.html',context)
 
