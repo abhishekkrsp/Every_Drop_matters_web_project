@@ -26,7 +26,9 @@ SECRET_KEY = 't9n1^+&z64m3zl&0ehyje+%5lcmp^9#j_t5&-y$%sg$!yvk2@@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = [
+    'drop-matters.herokuapp.com',
+    ]
 
 
 # Application definition
